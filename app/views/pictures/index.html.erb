@@ -1,0 +1,12 @@
+<div id="header">
+  <h1>GREG'S CD COLLECTION</h1>
+  <%= link_to "Add Photo", new_picture_url %>
+</div>
+
+  <% @pictures.each do |p| %>
+  <div class="cd">
+    <p>"<%= p[:title] %>" by <%= p[:artist] %></p>
+    <%= link_to image_tag(p.url), "/pictures/#{p.id}" %>
+  </div>
+  <% end %>
+
